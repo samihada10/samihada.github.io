@@ -31,7 +31,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
         architecto qui?
       </p>
-      <button class="buy">Buy</button>
+      <button id="buy">Buy</button>
     </div>
     <form id="form">
       <h1>Make an order</h1>
@@ -50,9 +50,7 @@
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
         document.getElementById("user_name").value =
-          tg.initDataUnsafe.user.first_name +
-          " " +
-          tg.initDataUnsafe.user.last_name;
+          tg.initDataUnsafe.user.first_name;
       });
 
       order.addEventListener("click", () => {
