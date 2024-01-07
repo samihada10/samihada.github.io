@@ -68,5 +68,22 @@ input {
 }
 input:focus {
   border-color: #db5d5d;
+
 }
 
+
+#order {
+  border: 0;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-left: 45%;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 500ms ease;
+  color: var (--tg-theme-button-color);
+  background: var(--tg-theme-button-text-color);
+  text-align: center;
+}
