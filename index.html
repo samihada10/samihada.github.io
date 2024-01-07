@@ -29,7 +29,8 @@
       <img class="img" src="sam.jpg" />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-        architecto qui? 
+        architecto qui? Eaque quasi voluptas quam ducimus quisquam odit aliquid
+        voluptatum molestiae laudantium.
       </p>
       <button class="buy">Buy</button>
     </div>
@@ -40,5 +41,24 @@
       <button id="order">Order</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+      let tg = window.Telegram.WebApp;
+      let buy = document.getElementById("buy");
+      let order = document.getElementById("order");
+
+      buy.addEventListener("click", () => {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("form").style.display = "block";
+        document.getElementById("user_name").value =
+          tg.initDataUnsafe.user.first_name +
+          " " +
+          tg.initDataUnsafe.user.last_name;
+      });
+
+      order.addEventListener("click", () => {
+        tg.close();
+      });
+    </script>
   </body>
 </html>
+
