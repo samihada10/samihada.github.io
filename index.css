@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Quicksand:wght@300;400;500&family=Rajdhani:wght@300;400;500&family=Teko:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap");
 
-.main {
+#main {
   width: 100%;
   padding: 20px;
   text-align: center;
@@ -52,7 +52,7 @@ button:hover {
   background: var(--tg-theme-secondary-bg-color);
 }
 
-.form {
+#form {
   text-align: center;
   display: none;
 }
