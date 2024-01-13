@@ -26,21 +26,21 @@
   <body>
     <div id="main">
       <h1>Online Shop</h1>
-      <img src="sam.jpg" />
+      <img src="sam.jpg" alt="logo  " />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-        architecto qui?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+        architecto enim pariatur.
       </p>
-      <button id="buy">Buy</button>
+      <button id="buy"></button>
     </div>
-    <form id="form">
+    <div id="form">
       <h1>Make an order</h1>
       <input type="text" placeholder="Name" id="user_name" />
       <input type="text" placeholder="Email" id="user_email" />
       <input type="text" placeholder="Telephone" id="user_phone" />
       <div id="error"></div>
       <button id="order">Order</button>
-    </form>
+    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
       let tg = window.Telegram.WebApp;
@@ -50,9 +50,7 @@
 
       buy.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
-        document.getElementById("form").style.display = "block";
-        document.getElementById("user_name").value =
-          tg.initDataUnsafe.user.first_name;
+        document.getElementById("order").style.display = "block";
       });
 
       order.addEventListener("click", () => {
@@ -60,19 +58,14 @@
         let name = document.getElementById("user_name").value;
         let email = document.getElementById("user_email").value;
         let phone = document.getElementById("user_phone").value;
-        if (name.length < 5) {
-          document.getElementById("error").innerText = "Error in name";
-          return;
-        }
         if (email.length < 5) {
-          document.getElementById("error").innerText = "Error in email";
+          document.getElementById("error").innerText = "Email error";
           return;
         }
         if (phone.length < 5) {
-          document.getElementById("error").innerText = "Error in phone number";
+          document.getElementById("phone").innerText = "Phone number error";
           return;
         }
-
         let data = {
           name: name,
           email: email,
@@ -85,4 +78,3 @@
     </script>
   </body>
 </html>
-
