@@ -25,16 +25,16 @@
   </head>
   <body>
     <div id="main">
-      <h1>Online Shop</h1>
-      <img src="sam.jpg" alt="logo  " />
+      <h1>Online Market</h1>
+      <img src="sam.jpg" alt="logo" />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-        architecto enim pariatur.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta minima
+        ex fuga illo qui ratione, id reprehenderit incidunt eum sequi.
       </p>
-      <button id="buy"></button>
+      <button id="buy">Buy</button>
     </div>
     <div id="form">
-      <h1>Make an order</h1>
+      <h1>Online Shop</h1>
       <input type="text" placeholder="Name" id="user_name" />
       <input type="text" placeholder="Email" id="user_email" />
       <input type="text" placeholder="Telephone" id="user_phone" />
@@ -50,31 +50,37 @@
 
       buy.addEventListener("click", () => {
         document.getElementById("main").style.display = "none";
-        document.getElementById("order").style.display = "block";
+        document.getElementById("form").style.display = "block";
+        document.getElementById("user_name").value =
+          tg.initDataUnsafe.user.first_name;
       });
 
       order.addEventListener("click", () => {
         document.getElementById("error").innerText = "";
-        let name = document.getElementById("user_name").value;
-        let email = document.getElementById("user_email").value;
-        let phone = document.getElementById("user_phone").value;
+        let name = documen.getElementById("user_name");
+        let email = documen.getElementById("user_email");
+        let phone = documen.getElementById("user_phone");
+
         if (email.length < 5) {
           document.getElementById("error").innerText = "Email error";
           return;
         }
+
         if (phone.length < 5) {
-          document.getElementById("phone").innerText = "Phone number error";
-          return;
+          document.getElementById("error").innerText = "Phone error";
         }
+
         let data = {
           name: name,
           email: email,
           phone: phone,
         };
         tg.sendData(JSON.stringify(data));
-
         tg.close();
       });
     </script>
+  </body>
+</html>
+
   </body>
 </html>
