@@ -57,9 +57,9 @@
 
       order.addEventListener("click", () => {
         document.getElementById("error").innerText = "";
-        let name = documen.getElementById("user_name");
-        let email = documen.getElementById("user_email");
-        let phone = documen.getElementById("user_phone");
+        let name = document.getElementById("user_name").value;
+        let email = document.getElementById("user_email").value;
+        let phone = document.getElementById("user_phone").value;
 
         if (email.length < 5) {
           document.getElementById("error").innerText = "Email error";
@@ -82,5 +82,3 @@
   </body>
 </html>
 
-  </body>
-</html>
